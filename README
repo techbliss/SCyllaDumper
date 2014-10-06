@@ -2,6 +2,20 @@ Have Scylla.dll in your PATH
 
 Run from Edit >> Plugins.
 
-Find it under Debugger.
+extract scylla into the ida root dir.
 
-![scylla](https://cloud.githubusercontent.com/assets/3592375/4519637/4377751a-4cc4-11e4-8bbf-e19fe5c60410.png)
+put sculla.py in plugin dir and load via plugin menu and find it after under debugg menu.
+
+Also important that you have environment setting called IDADIR = path /to /dir
+
+Always have this with ida anyway.
+
+
+
+
+
+again thx to the authers of the tool.
+
+Regards.
+
+https://anonfiles.com/file/596a7e0612f55f5ca65c6b39133c5805
