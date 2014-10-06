@@ -38,10 +38,13 @@ class Pizza(idaapi.plugin_t):
     def Dark(self):
         import os
         import sys
-
-        subprocess.Popen(os.path.join(os.path.expanduser('~'), os.path.expandvars('%IDADIR%'),
-    ''), shell=True)
-        subprocess.Popen("rundll32.exe Scylla.dll, ScyllaStartGui 1003ACB9")
+	if __EA64__:
+		subprocess.Popen(os.path.join(os.path.expanduser('~'), os.path.expandvars('%IDADIR%'),
+	'Scylla_x64.exe'), shell=True)
+	
+	else:
+		subprocess.Popen(os.path.join(os.path.expanduser('~'), os.path.expandvars('%IDADIR%'),
+	'Scylla_x86.exe'), shell=True)
 
 
 def PLUGIN_ENTRY():
