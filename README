@@ -12,7 +12,7 @@ ida x86 loads scylla x86
 first remove all old repos from ida.
 Extract content to ida folder, so idascylla.py is in the plugins folder.
 
-Get latest version of scylla and put in plugins\scylla folder.
+Get latest version of scylla and put in plugins\scylla\ folder.
 
 Run from Edit >> Plugins.
 then find it under View menu
