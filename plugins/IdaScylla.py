@@ -38,14 +38,13 @@ class Pizza(idaapi.plugin_t):
     def Dark(self):
         g = globals()
         idahome = idaapi.idadir("plugins\\scylla")
-        IDAPython_ExecScript(idahome +  "\\diaphora_loader.py", g)
         if __EA64__:
             subprocess.Popen(idahome + '\\Scylla_x64.exe')
     
         else:
             g = globals()
             idahome = idaapi.idadir("plugins\\scylla")
-            IDAPython_ExecScript(idahome +  "\\diaphora_loader.py", g)
+
             subprocess.Popen(idahome + '\\Scylla_x86.exe')
 
 def PLUGIN_ENTRY():
