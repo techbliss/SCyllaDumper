@@ -1,12 +1,23 @@
-Have Scylla.dll in your PATH
+Just a small tool to load the real tool.
+
+Version 1.3
+
+Changelog:
+bugfix > path
+Scylla got it own dir.
+ida x64 loads scylla x64
+ida x86 loads scylla x86
+
+
+first remove all old repos from ida.
+Extract content to ida folder, so idascylla.py is in the plugins folder.
+
+Get latest version of scylla and put in plugins\scylla folder.
 
 Run from Edit >> Plugins.
+then find it under View menu
 
-extract scylla into the ida root dir.
 
-put sculla.py in plugin dir and load via plugin menu and find it after under debugg menu.
-
-Also important that you have environment setting called IDADIR = path /to /dir
 
 Always have this with ida anyway.
 
@@ -14,8 +25,6 @@ Always have this with ida anyway.
 
 
 
-again thx to the authers of the tool.
-
+again thx to the authers of the tool.(Carbon, Aguila)
+https://github.com/NtQuery/Scylla
 Regards.
-
-https://anonfiles.com/file/596a7e0612f55f5ca65c6b39133c5805

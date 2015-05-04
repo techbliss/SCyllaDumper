@@ -16,7 +16,7 @@ class Pizza(idaapi.plugin_t):
     wanted_hotkey = "Alt-F7"
 
     def init(self):
-        idaapi.msg("Scylla Plugin is found. \n")
+        idaapi.msg("\n Scylla Plugin is found. \n")
         return idaapi.PLUGIN_OK
 
     def run(self, arg):
@@ -26,7 +26,7 @@ class Pizza(idaapi.plugin_t):
         idaapi.msg("")
 
     def AddMenuElements(self):
-        idaapi.add_menu_item("Debugger/", "Scylla", "", 0, self.Dark, ())
+        idaapi.add_menu_item("View/", "Scylla", "", 0, self.Dark, ())
 
 
     def run(self, arg=0):
@@ -36,16 +36,17 @@ class Pizza(idaapi.plugin_t):
 
 
     def Dark(self):
-        import os
-        import sys
-	if __EA64__:
-		subprocess.Popen(os.path.join(os.path.expanduser('~'), os.path.expandvars('%IDADIR%'),
-	'Scylla_x64.exe'), shell=True)
-	
-	else:
-		subprocess.Popen(os.path.join(os.path.expanduser('~'), os.path.expandvars('%IDADIR%'),
-	'Scylla_x86.exe'), shell=True)
-
+        g = globals()
+        idahome = idaapi.idadir("plugins\\scylla")
+        IDAPython_ExecScript(idahome +  "\\diaphora_loader.py", g)
+        if __EA64__:
+            subprocess.Popen(idahome + '\\Scylla_x64.exe')
+    
+        else:
+            g = globals()
+            idahome = idaapi.idadir("plugins\\scylla")
+            IDAPython_ExecScript(idahome +  "\\diaphora_loader.py", g)
+            subprocess.Popen(idahome + '\\Scylla_x86.exe')
 
 def PLUGIN_ENTRY():
     return Pizza()
